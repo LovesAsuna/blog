@@ -1,0 +1,26 @@
+{
+    auto_https disable_certs
+}
+
+http://hyosakura.com {
+    redir * https://www.hyosakura.com 301
+}
+
+http://cf-www.hyosakura.com, http://www.hyosakura.com {
+    encode gzip
+    root * /var/www/html/main
+    file_server
+    log {
+        output file /var/log/caddy/caddy.log
+    }
+}
+
+http://cf-blog.hyosakura.com, http://blog.hyosakura.com {
+    encode gzip
+    root * /var/www/html/wordpress
+    php_fastcgi localhost:9000
+    file_server
+    log {
+        output file /var/log/caddy/caddy.log
+    }
+}
