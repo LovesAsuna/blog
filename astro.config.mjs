@@ -37,6 +37,7 @@ import rehypeExternalLinks from "./src/plugins/rehype-external-links.mjs";
 import rehypeFigure from "./src/plugins/rehype-figure.mjs";
 import { remarkImageGrid } from "./src/plugins/remark-image-grid.js";
 import { plantumlConfig } from "./src/config";
+import cloudflare from "@astrojs/cloudflare";
 
 if (process.env.NODE_ENV === "development") {
 	setMaxListeners(20);
@@ -283,4 +284,7 @@ export default defineConfig({
 			assetsInlineLimit: 4096,
 		},
 	},
+	adapter: cloudflare({
+		prerenderEnvironment: "node"
+	}),
 });
