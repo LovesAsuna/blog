@@ -41,3 +41,5 @@ package/
 .codex*
 .claude
 .mimocode
+.rtk
+.trellis
