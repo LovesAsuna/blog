@@ -37,3 +37,9 @@ Firefly-docs/
 cache/
 package/
 .obsidian/
+
+openspec
+.rtk
+.trellis
+CLAUDE.md
+AGENTS.md
